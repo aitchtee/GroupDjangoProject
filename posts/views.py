@@ -43,7 +43,7 @@ def post_delete(request):
 
 def post_create(request):
     form = PostForm(request.POST or None)
-    if form.is_valid:
+    if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
     context = {'pageTitle': 'Create post',
